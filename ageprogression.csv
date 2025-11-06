@@ -1,0 +1,46 @@
+🕊️ Guru Nanak Dev Ji — Age & Aura Progression Assets
+
+| Asset Name                  | Age Depiction                 | Scene Context                                          | AI Prompt Hint                                                                                                                                                                                                      | Output Type          | Visual Notes / Continuity                                                                           |
+| --------------------------- | ----------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------- |
+| **Hero_GuruNanak_30**       | ~30 years old                 | Hero scene before the 1st Udasi (Ladakh terrain, dawn) | “silhouette of a young traveler seen from behind, simple tan robe, light turban, soft morning light from horizon, Ladakh terrain, cinematic composition, realistic fabric folds, no face, no glow, soft film grain” | `.png (transparent)` | Base starting figure. Energetic posture, robe mid-length. Slight wind direction left-to-right.      |
+| **Udasi1_GuruNanak_35**     | ~35 years old                 | 1st Udasi – East (Awakening, river plains)             | “traveler in simple robe walking along river plain, back view only, robe slightly longer and flowing, mature yet calm stance, early dawn saffron tone, cinematic realism, gentle wind effect”                       | `.png (transparent)` | Robe fabric lighter; slight longer folds. Maintain same silhouette angle; warmer light tone.        |
+| **Udasi2_GuruNanak_40**     | ~40 years old                 | 2nd Udasi – South (Oceans, vastness)                   | “traveler in flowing robe standing near coast, back view, ocean breeze moving robe, slightly older appearance, composed posture, cinematic lighting, realistic cloth motion”                                        | `.png (transparent)` | Fuller robe and beard contour (no face). Slight tilt forward posture, suggesting humility.          |
+| **Udasi3_GuruNanak_45**     | ~45 years old                 | 3rd Udasi – North (Snow, stillness)                    | “traveler wrapped in heavy robe with shawl, walking on snowy plateau, back view, mature silhouette, calm and slow step, cold blue light, cinematic style, detailed cloth folds”                                     | `.png (transparent)` | Robe thicker with shawl drape; cooler color grading. Adds depth and wisdom to posture.              |
+| **Udasi4_GuruNanak_50**     | ~50 years old                 | 4th Udasi – West (Desert, truth)                       | “elder traveler in long desert robe, walking through sand dunes, warm dusk light, back view, turban larger, robe touching ground, realistic lighting and fabric motion, cinematic tone”                             | `.png (transparent)` | Slightly bent posture, robe trailing in sand. Light wraps around figure (golden tone).              |
+| **Outro_GuruNanak_Ageless** | Ageless (Timeless light form) | Final Outro – return to divine unity                   | “silhouette of a robed traveler dissolving into horizon light, robe edges blending into soft glow, cinematic dawn tone, realistic light diffusion, minimalist composition”                                          | `.png (transparent)` | Simplified outline, partially merged into gradient light. Transition-ready to fade into pure light. |
+
+
+Camera angle: Consistent 3/4 back view (slightly elevated perspective, horizon visible).
+
+Lighting direction: From horizon behind Guru (symbolic of enlightenment following him).
+
+Composition: Guru centered vertically, walking toward distance; background minimalist.
+
+Art style: Cinematic matte painting realism, soft film grain texture, clean silhouette edges.
+
+Render settings: 16:9 ratio, transparent background (.png), 2048×1152 px.
+
+Consistency control: Keep the same seed or pose reference; vary clothing texture and light temperature per scene.
+
+
+
+| Phase         | Lighting Tone                 | Meaning       |
+| ------------- | ----------------------------- | ------------- |
+| Dawn          | Warm saffron light on horizon | Awakening     |
+| Noon          | Balanced blue-gold            | Understanding |
+| Dusk          | Golden-red tone               | Realization   |
+| Night → Light | White-gold                    | Liberation    |
+
+
+🌗 Age & Aura Progression — The Living Symbol of Enlightenment
+
+
+
+| Udasi                               | Approx. Age Depiction | Appearance Changes                                                                                | Symbolic Meaning                                   | Visual Cues                                      |
+| ----------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------ |
+| **Hero Scene (Before 1st Udasi)**   | ~30 years old         | Youthful stance, energetic gait, minimal wrinkles, shorter robe, slightly brisk movement          | Curiosity, beginning of journey                    | Morning light, soft golden tones                 |
+| **1st Udasi (East – Awakening)**    | ~35 years old         | Slightly calmer posture, robe draping more freely, shoulders relaxed                              | Understanding the essence of life and equality     | Dawn light, warm saffron hue, early fog          |
+| **2nd Udasi (South – Vastness)**    | ~40 years old         | Beard fuller, robe longer and flowing, hands often clasped behind back                            | Deep empathy, global understanding                 | Ocean breeze, open horizon, teal and coral tones |
+| **3rd Udasi (North – Silence)**     | ~45 years old         | Visible maturity, robe heavier, step slower but purposeful                                        | Introspection, realization of unity within silence | Cold blues, snow reflections, crimson shawl      |
+| **4th Udasi (West – Truth)**        | ~50 years old         | Slightly bent posture from humility, taller turban or layered cloth, longer robe with travel wear | Compassion matured into wisdom                     | Desert dusk, golden twilight, sand haze          |
+| **Outro (Return – Timeless Light)** | Ageless form          | Simplified silhouette, almost merging with light                                                  | Unity with eternal truth                           | White-gold gradient, faint luminous edge         |

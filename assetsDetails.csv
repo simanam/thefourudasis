@@ -1,0 +1,105 @@
+🧩 MASTER STRUCTURE
+
+| Layer                        | Description                                                   | File Type                    |
+| ---------------------------- | ------------------------------------------------------------- | ---------------------------- |
+| **A. Background Base**       | Terrain, horizon, sky — non-moving.                           | `.webp` / `.jpg`             |
+| **B. Midground**             | Key objects (Guru Nanak Dev Ji silhouette, mountains, trees). | `.png` (transparent)         |
+| **C. Foreground**            | Ground textures, props, vegetation, sand/snow/water.          | `.png` / `.webp`             |
+| **D. Atmospheric Effects**   | Fog, dust, mist, snowfall, reflection, light rays.            | `.png` overlay / `.mp4` loop |
+| **E. Text & Symbolic Layer** | Japji Sahib excerpt, geometric lines, Ik Onkar forms.         | `.svg` / `.png`              |
+
+
+🌄 UDÁSI I — EAST (BENGAL / ASSAM)
+“The Awakening of the East”
+
+| Layer            | Asset                 | Description                                            | AI Prompt Hint                                                                              | Output             |
+| ---------------- | --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------- | ------------------ |
+| **Background**   | Dawn River Sky        | Orange-gold sunrise with light mist; teal reflections. | “sunrise over Bengal river, warm saffron light, cinematic realism, soft fog, grain texture” | `.webp 3840×2160`  |
+|                  | Distant Village       | Mud huts, palm line, early smoke trails.               | “small Bengal village silhouettes in morning fog”                                           | `.png`             |
+| **Midground**    | Guru Nanak Silhouette | Walking beside river; shawl motion.                    | “man in simple robe walking near river, seen from back, cinematic lighting”                 | `.png transparent` |
+|                  | Boat Outline          | Small canoe drifting mid-river.                        | “silhouette of wooden canoe in mist”                                                        | `.png`             |
+| **Foreground**   | Wet Mud Trail         | Reflective texture with grass edges.                   | “wet muddy trail reflection texture top-down”                                               | `.png`             |
+| **Atmosphere**   | Morning Fog Layer     | Slow-moving mist band.                                 | “volumetric fog overlay, low altitude”                                                      | `.mp4 loop 8 s`    |
+| **Text /Symbol** | Japji Line 1          | “ਇਕ ਓਅੰਕਾਰ ਸਤਿ ਨਾਮੁ ਕਰਤਾ ਪੁਰਖੁ” with English below.    | —                                                                                           | `.svg`             |
+|                  | Light Direction Guide | Warm gradient overlay (sunrise).                       | —                                                                                           | `.png`             |
+
+
+🌊 UDÁSI II — SOUTH (SRI LANKA)
+“Across the Oceans”
+
+| Layer            | Asset               | Description                         | AI Prompt Hint                                                                          | Output  |
+| ---------------- | ------------------- | ----------------------------------- | --------------------------------------------------------------------------------------- | ------- |
+| **Background**   | Ocean Horizon       | Deep blue sea with coral sky.       | “tropical ocean horizon at sunset, coral orange sky, cinematic tone”                    | `.webp` |
+|                  | Distant Island      | Faint silhouette with palm shapes.  | “distant island silhouettes with haze”                                                  | `.png`  |
+| **Midground**    | Guru Nanak on Cliff | Standing facing sea, robe in wind.  | “traveler in robe standing on coastal cliff, back view, dramatic wind, sunset lighting” | `.png`  |
+|                  | Rock Edge           | Cliff texture foreground.           | “coastal rock edge texture cinematic lighting”                                          | `.png`  |
+| **Foreground**   | Sea Spray           | Foam motion overlay near bottom.    | “ocean spray particle overlay”                                                          | `.mp4`  |
+| **Atmosphere**   | Wind Dust           | Diagonal streaks simulating wind.   | “soft wind particles, warm tone”                                                        | `.png`  |
+| **Text /Symbol** | Japji Line 2        | “ਸਭਨਾ ਜੀਆ ਕਾ ਇਕੁ ਦਾਤਾ…”             | —                                                                                       | `.svg`  |
+|                  | Coral-Blue Gradient | Sky gradient layer for transitions. | —                                                                                       | `.png`  |
+
+
+🏔️ UDÁSI III — NORTH (TIBET / KASHMIR)
+“Into the Silence”
+
+| Layer            | Asset                   | Description                              | AI Prompt Hint                                                                   | Output  |
+| ---------------- | ----------------------- | ---------------------------------------- | -------------------------------------------------------------------------------- | ------- |
+| **Background**   | Mountain Plateau        | Cold blue-grey highlands with low cloud. | “Himalayan plateau under overcast light, snow & stone, cinematic matte painting” | `.webp` |
+| **Midground**    | Guru Nanak Walking      | Small red-shawl figure on snow path.     | “man in crimson shawl walking in snow, back view, minimalist scene”              | `.png`  |
+|                  | Distant Monastery       | Subtle silhouette on ridge.              | “distant Tibetan monastery silhouette in snow haze”                              | `.png`  |
+| **Foreground**   | Snow Trail + Footprints | Semi-transparent texture.                | “snow surface texture with footprints”                                           | `.png`  |
+| **Atmosphere**   | Falling Snow            | Light flakes, shallow DOF.               | “falling snow bokeh overlay cinematic”                                           | `.mp4`  |
+|                  | Fire Glow Layer         | Small warm glow (Scene 2).               | “campfire ember glow overlay transparent”                                        | `.png`  |
+| **Text /Symbol** | Japji Line 3            | “ਜਿਸ ਨੋ ਕ੍ਰਿਪਾ ਕਰੇ…”                     | —                                                                                | `.svg`  |
+|                  | Light Gradient          | Cold-white to soft-blue radial gradient. | —                                                                                | `.png`  |
+
+
+🏜️ UDÁSI IV — WEST (MECCA / BAGHDAD)
+“The Path of Truth”
+
+| Layer            | Asset               | Description                                | AI Prompt Hint                                                                 | Output  |
+| ---------------- | ------------------- | ------------------------------------------ | ------------------------------------------------------------------------------ | ------- |
+| **Background**   | Desert Horizon      | Golden-sand dunes under twilight sky.      | “desert dunes at dusk, deep blue sky, cinematic warm lighting”                 | `.webp` |
+|                  | Distant City        | Low skyline or tents in haze.              | “ancient middle eastern city silhouette, heat haze”                            | `.png`  |
+| **Midground**    | Guru Nanak Traveler | Walking into distance, long shadow.        | “traveler in light robe walking across desert, long evening shadow, back view” | `.png`  |
+| **Foreground**   | Sand Ripples        | Close texture, motion-blur ready.          | “sand dune ripple texture top view”                                            | `.png`  |
+| **Atmosphere**   | Dust Trail          | Animated particle overlay following steps. | “soft desert dust particle overlay”                                            | `.mp4`  |
+|                  | Crescent Moon       | Minimal glowing shape.                     | “thin crescent moon realistic silhouette”                                      | `.png`  |
+| **Text /Symbol** | Japji Line 4        | “ਹੁਕਮੈ ਅੰਦਰਿ ਸਭੁ ਕੋ…”                      | —                                                                              | `.svg`  |
+|                  | Twilight Gradient   | Gold→Navy transition.                      | —                                                                              | `.png`  |
+
+
+🌌 OUTRO — “The Eternal Journey”
+
+| Layer            | Asset                | Description                       | AI Prompt Hint                               | Output  |
+| ---------------- | -------------------- | --------------------------------- | -------------------------------------------- | ------- |
+| **Background**   | Dawn Gradient        | Black fading to pale gold.        | “night to dawn gradient sky cinematic”       | `.webp` |
+| **Midground**    | None (empty horizon) | Emptiness conveys continuation.   | —                                            | —       |
+| **Foreground**   | Footprint Texture    | Two footprints fading into light. | “two footprints on sand under morning light” | `.png`  |
+| **Atmosphere**   | Light Flare          | Expanding radial glow.            | “soft sun flare center frame, warm tone”     | `.mp4`  |
+| **Text /Symbol** | Final Quote          | “The Journey Never Ends…”         | —                                            | `.svg`  |
+
+
+
+🎨 UNIVERSAL SUPPORT ASSETS
+
+| Asset                       | Function                   | Notes                                                                          |
+| --------------------------- | -------------------------- | ------------------------------------------------------------------------------ |
+| **Grain Overlay**           | Analog realism             | Single global texture applied in post                                          |
+| **Vignette Mask**           | Depth focus                | Feathered edge overlay                                                         |
+| **Color LUTs**              | Tone consistency           | `WarmRise.cube`, `OceanBalance.cube`, `ColdSilence.cube`, `TwilightTruth.cube` |
+| **Light Transition Flares** | Scene fades                | Warm-to-cool gradient set                                                      |
+| **Japji Typography Frames** | Gurmukhi + English pairing | Use transparent background, size 4 K ready                                     |
+| **Ik Onkar Geometry**       | Minimal sacred symbol      | SVG outlines only                                                              |
+
+🧰 OUTPUT STANDARDS
+
+| Parameter         | Target                                                                                 |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| Resolution        | 3840 × 2160 px                                                                         |
+| DPI               | 150 (optimized for web + video)                                                        |
+| Color Space       | sRGB                                                                                   |
+| File Naming       | `udasi[1-4]_layer_[bg/mg/fg/atm/text]_v1.png`                                          |
+| Orientation       | Landscape 21:9                                                                         |
+| Export Format     | `.png` for transparent layers, `.webp` for static backgrounds, `.mp4` for motion loops |
+| Consistency Check | Apply same LUT + grain overlay in post                                                 |
