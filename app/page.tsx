@@ -1,11 +1,16 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import ParallaxLayer from "@/components/3d/ParallaxLayer";
 import CloudStreaks from "@/components/3d/CloudStreaks";
 import AtmosphericEffects from "@/components/3d/AtmosphericEffects";
 import UdasiOne from "@/components/scenes/UdasiOne";
@@ -15,6 +20,13 @@ import UdasiFour from "@/components/scenes/UdasiFour";
 
 export default function Home() {
   const [isHeroInView, setIsHeroInView] = useState(true);
+  const heroRef = useRef(null);
+
+  // Scroll progress for hero section
+  const { scrollYProgress: heroScrollProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
 
   // Mouse position tracking
   const mouseX = useMotionValue(0);
@@ -29,21 +41,29 @@ export default function Home() {
   const skyX = useTransform(smoothMouseX, [-1, 1], [-15, 15]);
   const skyY = useTransform(smoothMouseY, [-1, 1], [-15, 15]);
 
-  // Mountains move OPPOSITE to mouse (inverse parallax for depth)
+  // Mountains move OPPOSITE to mouse (inverse parallax for depth, horizontal only)
   const mountainX = useTransform(smoothMouseX, [-1, 1], [30, -30]);
-  const mountainY = useTransform(smoothMouseY, [-1, 1], [30, -30]);
+  const mountainY = useMotionValue(0); // No vertical movement
 
-  // Plateau is static (grounded)
-  const plateauX = useMotionValue(0);
-  const plateauY = useMotionValue(0);
+  // Plateau and Nanak move together (same as camera)
+  const plateauX = useTransform(smoothMouseX, [-1, 1], [-30, 30]);
+  const plateauY = useTransform(smoothMouseY, [-1, 1], [-20, 20]);
 
   // Text is static
   const textX = useMotionValue(0);
   const textY = useMotionValue(0);
 
-  // Nanak moves horizontally with mouse, but no vertical movement
-  const nanakX = useTransform(smoothMouseX, [-1, 1], [-50, 50]);
-  const nanakY = useMotionValue(0);
+  // Nanak moves with plateau (camera movement)
+  const nanakX = useTransform(smoothMouseX, [-1, 1], [-30, 30]);
+  const nanakY = useTransform(smoothMouseY, [-1, 1], [-20, 20]);
+
+  // Hero scroll animations
+  const heroY = useTransform(heroScrollProgress, [0, 1], ["0vh", "-30vh"]);
+  const heroOpacity = useTransform(
+    heroScrollProgress,
+    [0, 0.5, 1],
+    [1, 0.5, 0]
+  );
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -66,48 +86,56 @@ export default function Home() {
 
   return (
     <SmoothScroll>
-      <main className="relative bg-black">
+      <main className="relative" style={{ backgroundColor: "#1c3447" }}>
         {/* Scroll Progress Bar */}
         <ScrollProgress />
 
         {/* Hero Section */}
-        <section className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+        <motion.section
+          ref={heroRef}
+          className="sticky top-0 min-h-screen w-full overflow-visible flex items-center justify-center bg-black"
+          style={{
+            y: heroY,
+            opacity: heroOpacity,
+          }}
+        >
           {/* Background Layer - Retro Sky (zoomed, showing bottom half) */}
-          <ParallaxLayer speed={0.1} className="absolute inset-0">
+          <div className="absolute inset-0 overflow-hidden">
             <motion.div
-              className="relative w-full h-full"
+              className="relative w-full h-[110%]"
               style={{ x: skyX, y: skyY }}
             >
               <Image
-                src="/assets/hero/retrosky.png"
+                // src="/assets/hero/retrosky.png"
+                src="/assets/hero/bgnew.png"
                 alt="Retro sky background"
                 fill
                 className="object-cover object-bottom"
                 style={{
-                  transform: "translateY(-30%)",
+                  // transform: "translateY(-30%)",
                   transformOrigin: "center bottom",
                 }}
                 priority
               />
             </motion.div>
-          </ParallaxLayer>
+          </div>
 
           {/* Stars Layer (behind clouds, moving slowly) */}
-          <ParallaxLayer speed={0.15} className="absolute inset-0 z-[3]">
+          <div className="absolute inset-0 z-[3] overflow-hidden">
             <AtmosphericEffects
               type="stars"
               intensity={80}
               color="rgba(255, 255, 255, 0.8)"
             />
-          </ParallaxLayer>
+          </div>
 
           {/* Cloud Streaks Layer (behind mountains) */}
-          <ParallaxLayer speed={0.2} className="absolute inset-0 z-[5]">
+          <div className="absolute inset-0 z-[5] overflow-hidden">
             <CloudStreaks />
-          </ParallaxLayer>
+          </div>
 
           {/* Mountains Layer (zoomed, bg removed, sitting in middle, with tilt) */}
-          <ParallaxLayer speed={0.3} className="absolute inset-0 z-[10]">
+          {/* <div className="absolute inset-0 z-[10] overflow-hidden">
             <motion.div
               className="relative w-full h-full flex items-center justify-center"
               style={{ x: mountainX, y: mountainY }}
@@ -127,13 +155,36 @@ export default function Home() {
                 />
               </div>
             </motion.div>
-          </ParallaxLayer>
+          </div> */}
+
+          <div className="absolute inset-0 z-[10] overflow-hidden">
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-[100%]"
+              style={{ x: mountainX, y: mountainY }}
+            >
+              <Image
+                // src="/assets/hero/retrosky.png"
+                src="/assets/hero/mountiannew.png"
+                alt="mountains"
+                fill
+                className="object-cover object-bottom"
+                style={{
+                  // transform: "translateY(-30%)",
+                  transformOrigin: "center bottom",
+                }}
+                priority
+              />
+            </motion.div>
+          </div>
 
           {/* Plateau Ground Layer (bg removed, bottom position) */}
-          <ParallaxLayer speed={0.5} className="absolute inset-0 z-[15]">
-            <div className="relative w-full h-full flex items-end">
+          <div className="absolute inset-0 z-15 overflow-hidden">
+            <motion.div
+              className="relative w-full h-full flex items-end"
+              style={{ x: plateauX, y: plateauY }}
+            >
               <div
-                className="relative w-full h-[70%]"
+                className="relative w-full h-[40%]"
                 style={{
                   transform:
                     "scale(1.2) rotate(4deg) translateY(30%) translateX(-1%)",
@@ -147,8 +198,8 @@ export default function Home() {
                   className="object-cover object-bottom"
                 />
               </div>
-            </div>
-          </ParallaxLayer>
+            </motion.div>
+          </div>
 
           {/* Grain Overlay */}
           <div className="absolute inset-0 pointer-events-none z-10">
@@ -200,13 +251,12 @@ export default function Home() {
           </div>
 
           {/* Nanak Figure Layer (foreground, on top of everything) */}
-          <ParallaxLayer speed={0.7} className="absolute inset-0 z-30">
+          <div className="absolute inset-0 z-30">
             <motion.div
               className="relative w-full h-full flex items-end justify-start pb-0 pl-[20%]"
               style={{
                 x: nanakX,
                 y: nanakY,
-                transform: "translateY(160px)",
               }}
             >
               <div className="relative w-[350px] h-[600px] lg:w-[450px] lg:h-[700px]">
@@ -218,7 +268,7 @@ export default function Home() {
                 />
               </div>
             </motion.div>
-          </ParallaxLayer>
+          </div>
 
           {/* Scroll Indicator */}
           <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40">
@@ -233,7 +283,7 @@ export default function Home() {
 
           {/* Vignette Effect */}
           <div className="absolute inset-0 vignette pointer-events-none z-35" />
-        </section>
+        </motion.section>
 
         {/* Udasi Sections */}
         <UdasiOne />
