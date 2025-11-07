@@ -37,12 +37,12 @@ export default function Home() {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
 
-  // Transform values for different layers (different intensity)
-  const skyX = useTransform(smoothMouseX, [-1, 1], [-15, 15]);
-  const skyY = useTransform(smoothMouseY, [-1, 1], [-15, 15]);
+  // Background and Mountains move together OPPOSITE to mouse (inverse parallax for depth, horizontal only)
+  const skyX = useTransform(smoothMouseX, [0, 0], [0, 0]);
+  const skyY = useMotionValue(0); // No vertical movement
 
-  // Mountains move OPPOSITE to mouse (inverse parallax for depth, horizontal only)
-  const mountainX = useTransform(smoothMouseX, [-1, 1], [30, -30]);
+  // Mountains move WITH background (same direction, horizontal only)
+  const mountainX = useTransform(smoothMouseX, [-1, 1], [20, -20]);
   const mountainY = useMotionValue(0); // No vertical movement
 
   // Plateau and Nanak move together (same as camera)
@@ -86,7 +86,7 @@ export default function Home() {
 
   return (
     <SmoothScroll>
-      <main className="relative" style={{ backgroundColor: "#1c3447" }}>
+      <main className="relative" style={{ backgroundColor: "#e1a86b" }}>
         {/* Scroll Progress Bar */}
         <ScrollProgress />
 
@@ -112,7 +112,7 @@ export default function Home() {
                 fill
                 className="object-cover object-bottom"
                 style={{
-                  // transform: "translateY(-30%)",
+                  transform: "translateY(-20%)",
                   transformOrigin: "center bottom",
                 }}
                 priority
@@ -135,31 +135,10 @@ export default function Home() {
           </div>
 
           {/* Mountains Layer (zoomed, bg removed, sitting in middle, with tilt) */}
-          {/* <div className="absolute inset-0 z-[10] overflow-hidden">
-            <motion.div
-              className="relative w-full h-full flex items-center justify-center"
-              style={{ x: mountainX, y: mountainY }}
-            >
-              <div
-                className="relative w-full h-full"
-                style={{
-                  transform: "scale(1.3) rotate(4deg) translateY(-30%)",
-                  transformOrigin: "center center",
-                }}
-              >
-                <Image
-                  src="/assets/hero/mountain-no-bg.png"
-                  alt="Mountains"
-                  fill
-                  className="object-cover object-center"
-                />
-              </div>
-            </motion.div>
-          </div> */}
 
           <div className="absolute inset-0 z-[10] overflow-hidden">
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[100%]"
+              className="absolute bottom-0 left-[-10%] w-[120%] h-[120%]"
               style={{ x: mountainX, y: mountainY }}
             >
               <Image
@@ -169,7 +148,7 @@ export default function Home() {
                 fill
                 className="object-cover object-bottom"
                 style={{
-                  // transform: "translateY(-30%)",
+                  transform: "scale(0.85)",
                   transformOrigin: "center bottom",
                 }}
                 priority
@@ -178,7 +157,7 @@ export default function Home() {
           </div>
 
           {/* Plateau Ground Layer (bg removed, bottom position) */}
-          <div className="absolute inset-0 z-15 overflow-hidden">
+          {/* <div className="absolute inset-0 z-15 overflow-hidden">
             <motion.div
               className="relative w-full h-full flex items-end"
               style={{ x: plateauX, y: plateauY }}
@@ -199,15 +178,37 @@ export default function Home() {
                 />
               </div>
             </motion.div>
+          </div> */}
+
+          <div className="absolute inset-0 z-15 overflow-hidden">
+            <motion.div
+              className="relative w-full h-full flex items-end"
+              style={{ x: plateauX, y: plateauY }}
+            >
+              <div
+                className="relative w-[120%] h-[100%]"
+                style={{
+                  transform: " translateY(70%)",
+                  transformOrigin: "bottom center",
+                }}
+              >
+                <Image
+                  src="/assets/hero/newdesert.png"
+                  alt="Plateau ground"
+                  fill
+                  className="object-cover object-bottom"
+                />
+              </div>
+            </motion.div>
           </div>
 
           {/* Grain Overlay */}
-          <div className="absolute inset-0 pointer-events-none z-10">
+          <div className="absolute inset-0 pointer-events-none z-[25]">
             <Image
-              src="/assets/hero/grainy.png"
+              src="/assets/hero/grain.png"
               alt="Grain texture"
               fill
-              className="object-cover opacity-40"
+              className="object-cover opacity-100"
               style={{ mixBlendMode: "overlay" }}
             />
           </div>
@@ -236,11 +237,12 @@ export default function Home() {
                 style={{
                   fontFamily: "'Anton', sans-serif",
                   // textShadow: "8px 8px 20px rgba(0,0,0,0.9)",
-                  fontSize: "clamp(4rem, 8vw, 10rem)",
+                  fontSize: "clamp(6rem, 8vw, 10rem)",
                   fontWeight: "100",
                   letterSpacing: "0",
                   lineHeight: "0.98",
                   textTransform: "uppercase",
+                  color: "#f8d4a8",
                 }}
               >
                 <div>THE</div>
